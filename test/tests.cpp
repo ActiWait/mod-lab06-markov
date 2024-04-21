@@ -19,9 +19,9 @@ TEST(TextGenTest, test2) {
     prefix pre1 = get_pref(words, 2);
     add_new_row(statetab1, pre1, words, 2);
 
-    std::deque<std::string> true_s = {"1", "2"};
+    std::deque<std::string> true_s = {"2", "3"};
     std::map<prefix, postfix> statetab2;
-    std::vector<std::string> post = {words[2]};
+    std::vector<std::string> post = {words[3]};
     statetab2[true_s] = post;
 
     EXPECT_EQ(statetab1, statetab2);
