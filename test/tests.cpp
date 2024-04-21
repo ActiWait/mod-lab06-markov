@@ -5,14 +5,14 @@
 
 
 
-TEST(AutomataTest, test1) {
+TEST(TextGenTest, test1) {
     std::vector<std::string>  words = {"1", "2", "3", "4", "5", "6"};
     std::deque<std::string> true_s = {"1", "2"};
     prefix pref_s = get_pref(words , 2);
     EXPECT_EQ(pref_s, true_s);
 }
 
-TEST(AutomataTest, test2) {
+TEST(TextGenTest, test2) {
     std::vector<std::string>  words = {"1", "2", "3", "4", "5", "6"};
 
     std::map<prefix, postfix> statetab1;
@@ -22,12 +22,12 @@ TEST(AutomataTest, test2) {
     std::deque<std::string> true_s = {"1", "2"};
     std::map<prefix, postfix> statetab2;
     std::vector<std::string> post = {words[2]};
-    statetab2[trues] = post;
+    statetab2[true_s] = post;
 
     EXPECT_EQ(statetab1, statetab2);
 }
 
-TEST(AutomataTest, test3) {
+TEST(TextGenTest, test3) {
     std::vector<std::string>  words = {"1", "2", "3", "4", "5", "6"};
 
     std::map<prefix, postfix> statetab = create_statetab(words, 2);
@@ -41,20 +41,20 @@ TEST(AutomataTest, test3) {
     EXPECT_EQ(post[0], true_string);
 }
 
-TEST(AutomataTest, test4) {
+TEST(TextGenTest, test4) {
     std::vector<std::string>  words = {"1", "2", "3", "1", "2", "4"};
 
-    std::map<prefix, postfix> statetab = creaate_statetab(words, 2);
+    std::map<prefix, postfix> statetab = create_statetab(words, 2);
 
     std::deque<std::string> pref = {"1", "2"};
     std::vector<std::string> post;
     add_new_string(statetab, pref, post);
     std::vector<std::string> true_string = {"3", "4"};
 
-    EXPECT_EQ(std::find(true_string.begin(), true_string.end(), post[0]) != vec.end(), true);
+    EXPECT_EQ(std::find(true_string.begin(), true_string.end(), post[0]) != true_string.end(), true);
 }
 
-TEST(AutomataTest, test4) {
+TEST(TextGenTest, test5) {
     std::vector<std::string>  words = {"1", "2", "3", "4", "5", "6"};
 
     std::map<prefix, postfix> statetab = create_statetab(words, 2);
