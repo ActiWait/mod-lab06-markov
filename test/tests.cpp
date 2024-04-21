@@ -51,7 +51,8 @@ TEST(TextGenTest, test4) {
     add_new_string(statetab, pref, post);
     std::vector<std::string> true_string = {"3", "4"};
 
-    EXPECT_EQ(std::find(true_string.begin(), true_string.end(), post[0]) != true_string.end(), true);
+    EXPECT_EQ(std::find(true_string.begin(), true_string.end(),
+            post[0]) != true_string.end(), true);
 }
 
 TEST(TextGenTest, test5) {
@@ -62,4 +63,3 @@ TEST(TextGenTest, test5) {
 
     EXPECT_EQ(words, text);
 }
-
