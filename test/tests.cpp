@@ -54,7 +54,7 @@ TEST(AutomataTest, test4) {
     EXPECT_EQ(true_string.find(post[0]) != true_string.end(), true);
 }
 
-TEST(AutomataTest, test4) {
+TEST(AutomataTest, test5) {
     std::vector<std::string>  words = {"1", "2", "3", "4", "5", "6"};
 
     std::map<prefix, postfix> statetab = creaate_statetab(words, 2);
