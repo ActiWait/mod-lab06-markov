@@ -1,6 +1,6 @@
 //  Copyright 2024 Teodor
-#ifndef TEXTGEN
-#define TEXTGEN
+#ifndef SRC_TEXTGEN_H_
+#define SRC_TEXTGEN_H_
 
 #include <string>
 #include <fstream>
@@ -27,4 +27,4 @@ std::map<prefix, postfix> create_statetab(const std::vector<std::string> &words,
                                             int NPREF);
 std::vector<std::string> get_text(std::map<prefix, postfix> &statetab,
         const std::vector<std::string> &words, int NPREF, int MAXGEN);
-#endif
+#endif // SRC_TEXTGEN_H_
