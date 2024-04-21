@@ -60,6 +60,6 @@ TEST(AutomataTest, test5) {
     std::map<prefix, postfix> statetab = creaate_statetab(words, 2);
     std::vector<std::string> text = get_text(statetab, words, 2, 6);
 
-    EXPECT_Tr(words, text);
+    EXPECT_EQ(words, text);
 }
 
